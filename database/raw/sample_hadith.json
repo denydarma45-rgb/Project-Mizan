@@ -1,0 +1,32 @@
+[
+  {
+    "book": "Shahih Bukhari",
+    "hadith_number": 1,
+    "arabic": "إِنَّمَا الْأَعْمَالُ بِالنِّيَّاتِ",
+    "translation_id": "Sesungguhnya setiap amal tergantung niatnya."
+  },
+  {
+    "book": "Shahih Muslim",
+    "hadith_number": 1,
+    "arabic": "الدِّينُ النَّصِيحَةُ",
+    "translation_id": "Agama adalah nasihat."
+  },
+  {
+    "book": "Sunan Abu Dawud",
+    "hadith_number": 40,
+    "arabic": "الطُّهُورُ شَطْرُ الْإِيمَانِ",
+    "translation_id": "Bersuci adalah setengah dari iman."
+  },
+  {
+    "book": "Jami' At-Tirmidzi",
+    "hadith_number": 2459,
+    "arabic": "اتَّقِ اللَّهَ حَيْثُمَا كُنْتَ",
+    "translation_id": "Bertakwalah kepada Allah di mana pun engkau berada."
+  },
+  {
+    "book": "Sunan An-Nasa'i",
+    "hadith_number": 4994,
+    "arabic": "لَا يُؤْمِنُ أَحَدُكُمْ",
+    "translation_id": "Tidak sempurna iman salah seorang di antara kalian."
+  }
+]
