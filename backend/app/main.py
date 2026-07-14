@@ -2,7 +2,7 @@ from fastapi import FastAPI, HTTPException
 
 from .database import SessionLocal
 from .models import Hadith
-from .utils import hadith_to_dict
+from .schemas import HadithResponse
 from .search import search_hadith
 
 app = FastAPI(
@@ -22,39 +22,29 @@ def root():
     }
 
 
-@app.get("/hadiths")
+@app.get("/hadiths", response_model=list[HadithResponse])
 def get_hadiths():
     session = SessionLocal()
 
     hadiths = session.query(Hadith).all()
 
-    result = []
-
-    for h in hadiths:
-        result.append(hadith_to_dict(h))
-
     session.close()
 
-    return result
+    return hadiths
 
 
-@app.get("/hadiths/search")
+@app.get("/hadiths/search", response_model=list[HadithResponse])
 def search(q: str):
     session = SessionLocal()
 
     hadiths = search_hadith(session, q)
 
-    result = []
-
-    for h in hadiths:
-        result.append(hadith_to_dict(h))
-
     session.close()
 
-    return result
+    return hadiths
 
 
-@app.get("/hadiths/{hadith_id}")
+@app.get("/hadiths/{hadith_id}", response_model=HadithResponse)
 def get_hadith(hadith_id: int):
     session = SessionLocal()
 
@@ -64,8 +54,6 @@ def get_hadith(hadith_id: int):
         session.close()
         raise HTTPException(status_code=404, detail="Hadith not found")
 
-    result = hadith_to_dict(hadith)
-
     session.close()
 
-    return result
+    return hadith
