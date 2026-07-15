@@ -11,3 +11,4 @@ __pycache__/
 
 # Linux
 .DS_Store
+database/sqlite/*.db
